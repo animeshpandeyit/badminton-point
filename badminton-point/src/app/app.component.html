@@ -1,0 +1,95 @@
+<!-- <div class="container"> -->
+<div class="row m-2">
+  <div class="col-md-8">
+    <div class="court">
+      <div class="net"></div>
+      <div class="line center-line"></div>
+      <div class="line service-line-top"></div>
+      <div class="line service-line-bottom"></div>
+      <div class="line singles-side-line-left"></div>
+      <div class="line singles-side-line-right"></div>
+      <div class="line doubles-side-line-left"></div>
+      <div class="line doubles-side-line-right"></div>
+      <div class="line back-line-top"></div>
+      <div class="line back-line-bottom"></div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h2>Points Table</h2>
+    <table>
+      <tr>
+        <th>Team</th>
+        <th>Matches Played</th>
+        <th>Wins</th>
+        <th>Losses</th>
+        <th>Points</th>
+      </tr>
+      <tr>
+        <td>Team A</td>
+        <td>5</td>
+        <td>3</td>
+        <td>2</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>Team B</td>
+        <td>5</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+    </table>
+    <hr />
+    <table>
+      <tr>
+        <th>"This game will be worth X points."</th>
+      </tr>
+      <tr>
+        <!-- <td>{{ matchpointform }} points.</td> -->
+        <td>{{ matchpointinput }} points.</td>
+      </tr>
+    </table>
+  </div>
+</div>
+<!-- </div> -->
+
+<hr />
+
+<div class="row m-3">
+  <div class="col-md-3 d-flex flex-column bd-highlight mb-3 capitalletters">
+    match point
+
+    <form
+      action=""
+      [formGroup]="matchpointform"
+      (ngSubmit)="submitMatchPoint()"
+    >
+      <div class="mt-3 bd-highlight">
+        <input
+          type="number"
+          name="matchpoint"
+          id="matchpoint"
+          formControlName="matchpoint"
+          placeholder="Enter match point"
+          min="0"
+          required
+          [disabled]="isDisabled"
+        />
+      </div>
+      <div class="mt-3 bd-highlight">
+        <button type="submit" class="btn btn-success">
+          submit match point
+        </button>
+
+        <!-- <button type="button" (click)="resetInput()">reset Input</button> -->
+      </div>
+    </form>
+  </div>
+  <div class="col-md-3 d-flex flex-column bd-highlight mb-3 capitalletters">
+    team a counter
+  </div>
+  <div class="col-md-3 d-flex flex-column bd-highlight mb-3 capitalletters">
+    team b counter
+  </div>
+  <div class="col-md-3"></div>
+</div>
